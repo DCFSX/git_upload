@@ -30,6 +30,28 @@ OR
 )
 Order BY 序號
 
+--課堂練習8
+SELECT a.序號, a.氫離子濃度指數, a.濁度,  a.自由有效餘氧, c.WATER_PURIFICATION_PLANT as 淨水廠, c.WATER_SUPPLY as 供水系統 , b.TOWNSHIP as 行政區, b.PLACE as 路段
+FROM
+(
+SELECT PLACE, SERIAL_NUMBER as 序號, HYDROGEN as 氫離子濃度指數, TURBIDITY as 濁度,  CHLORINE as 自由有效餘氧, WATER_SYSTEM
+From SQL_TAOYUAN_WATER
+Where HYDROGEN  IN ('7.5','8')
+AND CHLORINE>0.6 
+AND Place='T22'
+Union
+SELECT PLACE, SERIAL_NUMBER as 序號, HYDROGEN as 氫離子濃度指數, TURBIDITY as 濁度,  CHLORINE as 自由有效餘氧, WATER_SYSTEM
+From SQL_TAOYUAN_WATER
+Where 
+(SERIAL_NUMBER Between 521 and 529)
+OR
+(CHLORINE IN('0.76','0.77','0.66') AND HYDROGEN<>7.8 AND TURBIDITY=0.6)
+)a
+LEFT Join SQL_TAOYUAN_REGIONS b
+ON a.Place = b.SERIAL
+LEFT Join SQL_TAOYUAN_WATER_SYSTEM c
+ON a.WATER_SYSTEM = c.SERIAL
+
 --課堂練習9
 SELECT 
     Place as 地區,
