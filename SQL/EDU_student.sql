@@ -71,3 +71,10 @@ Group by a.CUST_ID, b.Name
 
 insert into SQL_EMP1 (EMP_ID, EMP_NM, ID, TEL, DEP)
 Values('00038569','李Ｏ拉','C100200100',null,'企業資訊處')
+
+--以後型別( )直接填數字
+CREATE TABLE SQL_DEP(
+DEP NVARCHAR2(20),
+LEADER CHAR(8),
+ADDR NVARCHAR2(20)
+);
