@@ -1,4 +1,11 @@
-git status
-git add
-git commit -m "訊息"
-git push origin main
+git status //是否有要提交的檔案
+git add . //全部暫存
+git add *.副檔名 //暫存此副檔名的
+git commit -m "訊息" //提交訊息
+git push origin main //提交
+git log --online //提交紀錄(HEAD 最新進度)
+git diff ID --檔名 //新舊版本差異
+git checkout 還原點 ID --檔名 //回到就還原點
+
+git git add *.副檔名
+git status //移出暫存
