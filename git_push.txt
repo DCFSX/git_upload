@@ -9,3 +9,5 @@ git checkout 還原點 ID --檔名 //回到就還原點
 
 git git add *.副檔名
 git status //移出暫存
+.gitignore 建立 //將不需被追蹤檔案寫入此檔
+
