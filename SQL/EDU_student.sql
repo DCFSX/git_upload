@@ -1,3 +1,5 @@
+--2024/7/30:
+
 --課堂練習5
 SELECT SERIAL_NUMBER as 序號, HYDROGEN as 氫離子濃度指數, TURBIDITY as 濁度,  CHLORINE as 自由有效餘氧
 From SQL_TAOYUAN_WATER
